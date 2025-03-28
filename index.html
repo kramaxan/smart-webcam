@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Smart Webcam</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/smart-webcam/favicon.ico" />
+        <link rel="stylesheet" href="/smart-webcam/style.css" />
+    </head>
+    <body>
+        <div id="loading-overlay" class="loading-overlay">Loading...</div>
+        <div class="main-container">
+            <section class="image-upload-section">
+                <div class="section-header">
+                    <h1>Image Upload</h1>
+                    <div class="action-buttons">
+                        <label for="image-file-input" class="action-button">Upload Image</label>
+                        <button id="delete-image-button" class="action-button" style="display: none">Remove</button>
+                        <button id="clear-detections-button" class="action-button" style="display: none">Clear</button>
+                    </div>
+                </div>
+                <input type="file" id="image-file-input" accept="image/png, image/jpeg" style="display: none" />
+            </section>
+            <section class="webcam-section">
+                <div class="section-header">
+                    <h1>Webcam Stream</h1>
+                    <button id="toggle-webcam-button" class="action-button">Start Webcam</button>
+                </div>
+                <video id="webcam-stream" autoplay></video>
+            </section>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js" type="text/javascript"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+        <script src="/smart-webcam/script.js"></script>
+    </body>
+</html>
